@@ -1,0 +1,13 @@
+package com.tharanga.datatypes;
+
+public class CharDemo1 {
+
+	public static void main(String args[]){  
+		char c='S';  
+		String s=String.valueOf(c);  
+		System.out.println("String is: "+s); 
+		
+
+	}
+
+}

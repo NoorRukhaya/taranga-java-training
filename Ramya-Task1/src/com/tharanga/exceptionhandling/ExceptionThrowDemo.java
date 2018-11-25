@@ -1,0 +1,17 @@
+package com.tharanga.exceptionhandling;
+
+public class ExceptionThrowDemo {
+
+	// We can throw either checked or uncheked exception in java by throw keyword
+			static void validate(int age){  
+			     if(age<18)  
+			      throw new ArithmeticException("not valid");  
+			     else  
+			      System.out.println("welcome to vote");  
+			   }  
+			   public static void main(String args[]){  
+			      validate(15);  
+			      System.out.println("rest of the code...");  
+			  }  
+
+}
