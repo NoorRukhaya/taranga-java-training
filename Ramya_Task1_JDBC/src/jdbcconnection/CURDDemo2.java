@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class CURDDemo2 {
-	
+	 
 	public static void main(String[] args) {  
 		try{  
 			Class.forName("com.mysql.cj.jdbc.Driver");
