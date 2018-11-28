@@ -1,0 +1,13 @@
+package com.tharanga.multithreading;
+
+public class ThreadLifeCycle extends Thread{
+	 
+		public void run(){  
+		System.out.println("thread is running...");  
+		}  
+		public static void main(String args[]){  
+			ThreadLifeCycle t1=new ThreadLifeCycle();  
+		t1.start();  
+		 }  
+		}  
+
