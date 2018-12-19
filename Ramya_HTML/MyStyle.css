@@ -1,0 +1,34 @@
+div
+{
+margin:5px;
+border:5px  solid lightblue;
+float:left;
+height:300px;
+width:250px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.district
+{
+background-color:blue;
+color:#FFF;
+padding:10px;
+}
+
+.taluk
+{
+background-color:red;
+color:black;
+padding:10px;
+}
+
+#name
+{
+background-color:yellow;
+color:Blue;
+padding:10px;
+}
