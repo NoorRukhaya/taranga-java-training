@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+    body {background-color: powderblue;}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<h1>My First JavaScript</h1>
+
+<p>JavaScript can change the content of an HTML element:</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="demo">This is a demonstration.</p>
+
+<script>
+function myFunction() { 
+  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+}
+</script>
+
+<h2>Show Different Images Depending on Browser Width</h2>
+<p>Resize the browser width and the image will change at 600px and 1500px.</p>
+
+<picture>
+  <source srcset="C:\Users\win-10\Downloads\flowers.jpg" media="(max-width: 300px)">
+  <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img src="img_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+
+<h1 style="font-size:5vw;">Responsive Text</h1>
+
+<h2>Computer Code</h2>
+
+<code>
+x = 5;<br>
+y = 6;<br>
+z = x + y;
+</code>
+
+
+<h2>The var Element</h2>
+<p>Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>.</p>
+
+</body>
+</html>
