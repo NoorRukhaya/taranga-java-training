@@ -1,0 +1,116 @@
+div{
+margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+height:325px;
+}
+/*
+p {
+  border: 1px solid powderblue;
+  padding: 30px;
+   margin: 50px;
+}*/
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+} 
+
+.main {
+  text-align: center;
+} 
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+} 
+#form_login {
+     position: absolute;
+     left: 40%;
+     top: 30%;
+     
+}
+#register_login {
+     position: absolute;
+     left: 35%;  
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+myHero {
+  display: block;
+  background-color: #dddddd;
+  padding: 20px;
+  font-size: 30px;
+}  
