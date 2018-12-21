@@ -1,0 +1,776 @@
+
+<html>
+<head>
+<style>
+
+div{}
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img-container {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+div{margin:0;}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container .box {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.navmenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navmenu li {
+  float: left;
+}
+
+.navmenu li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navmenu li a:hover {
+  background-color: #111;
+}
+
+.navmenu .active {
+  background-color: red;
+}
+
+
+
+.weblayout .header, .footer {
+  background-color: grey;
+  color: white;
+  padding: 15px;
+  text-align:center;
+}
+
+.weblayout .column {
+  float: left;
+  padding: 15px;
+}
+
+.weblayout .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.weblayout .menu {
+  width: 25%;
+}
+
+.weblayout .content {
+  width: 75%;
+}
+
+.weblayout .menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.weblayout .menu li {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #33b5e5;
+  color: #ffffff;
+}
+
+.weblayout .menu li:hover {
+  background-color: #0099cc;
+}
+
+span.a {
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: yellow;
+}
+
+span.b {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: yellow;
+}
+
+span.c {
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: yellow;
+}
+
+.nav {
+  background-color: gray;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+.descendentselector p{
+  background-color: yellow;
+}
+.childselector > p{
+  background-color: yellow;
+}
+.adjacentsiblingselector + p{
+  background-color: yellow;
+}
+.generalsiblingselector ~ p{
+  background-color: yellow;
+}
+
+.divhover {
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.divhover:hover {
+  background-color: blue;
+}
+
+.hoveroverme p {
+  display: none;
+  background-color: gray;
+  padding: 20px;
+}
+
+.hoveroverme:hover p {
+  display: block;
+}
+
+.firstchild p:first-child {
+  color: blue;
+}
+.firstielement i:first-child {
+  color: blue;
+}
+
+.alli p:first-child i {
+  color: blue;
+}
+
+.lang q:lang(no) {
+  quotes: "~" "~";
+}
+
+.pseudoelements p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+
+.firstletter p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+.usingselection ::selection {
+  color: red;
+  background: yellow;
+}
+
+.usingopacity img {
+opacity:0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.usingopacity img:hover {
+opacity:1.0;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+.usingtransparency {
+  background-color: #4CAF50;
+  padding: 10px;
+}
+
+.usingtransparency.first {
+  opacity: 0.1;
+  filter: alpha(opacity=10); /* For IE8 and earlier */
+}
+
+.usingtransparency.second {
+  opacity: 0.3;
+  filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.usingtransparency.third {
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.textinbackground {
+  background: url(Hydrangeas.jpg) repeat;
+  border: 2px solid black;
+}
+
+.textintransbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.textintransbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+
+.counters {
+  counter-reset: section;
+}
+
+.counters h1 {
+  counter-reset: subsection;
+}
+
+.counters h1::before {
+  counter-increment: section;
+  content: "Section " counter(section) ". ";
+}
+
+.counters h2::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="one" style="border:solid 2px green;" >
+
+<h2 style="text-align:center">Grid of Boxes</h2>
+<p>Float boxes side by side:</p>
+
+<div class="clearfix">
+  <div class="box" style="background-color:#bbb;width:300px;height:50px;text-align:center;">
+  <p>Some text</p>
+  </div>
+  <div class="box" style="background-color:#ccc;width:300px;height:50px;text-align:center;">
+  <p>Some text</p>
+  </div>
+  <div class="box" style="background-color:#ddd;width:300px;height:50px;text-align:center;">
+  <p>Some text</p>
+  </div>
+
+</div>
+ <p>Note that we also use the clearfix hack to take care of the layout flow, and that add the box-sizing property to make sure that the box doesn't break due to extra padding. Try to remove this code to see the effect.</p>
+
+</div>
+
+
+
+
+
+<div  style="border:solid 2px green;" >
+
+<h2 style="text-align:center">Images Side by Side</h2>
+<p>Float images side by side:</p>
+
+<div class="clearfix">
+  <div class="img-container">
+  <img src="C:\Users\Public\Pictures\Sample Pictures\Chrysanthemum.jpg" alt="Italy" style="width:100%;height:100px;">
+  </div>
+  <div class="img-container">
+  <img src="C:\Users\Public\Pictures\Sample Pictures\Desert.jpg" alt="Forest" style="width:100%;height:100px;">
+  </div>
+  <div class="img-container">
+  <img src="C:\Users\Public\Pictures\Sample Pictures\Hydrangeas.jpg" alt="Mountains" style="width:100%;height:100px;">
+  </div>
+  <p>Note that we also use the clearfix hack to take care of the layout flow, and that add the box-sizing property to make sure that the image container doesn't break due to extra padding. Try to remove this code to see the effect.</p>
+
+</div>
+</div>
+
+<div  style="border:solid 2px green;" >
+
+<h1 style="text-align:center">Flexible Boxes</h1>
+
+<div class="flex-container">
+  <div class="box">Box 1 - This is some text to make sure that the content gets really tall. This is some text to make sure that the content gets really tall.</div>
+  <div class="box">Box 2 - My height will follow Box 1.</div>
+</div>
+
+<p>Try to resize the browser window to see the flexible layout.</p>
+
+</div>
+
+<div class="navmenu"  style="border:solid 2px green;" >
+
+<h3 style="text:align:center"> Navigation Menu</h3>
+<ul>
+  <li><a href="#home" class="active">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</div>
+
+
+<div class="weblayout"  style="border:solid 2px green;" >
+
+<h2 style="text-align:center">Weblayout example</h2>
+
+<div class="header">
+  <h1>Chania</h1>
+</div>
+
+<div class="clearfix">
+  <div class="column menu">
+    <ul>
+      <li>The Flight</li>
+      <li>The City</li>
+      <li>The Island</li>
+      <li>The Food</li>
+    </ul>
+  </div>
+
+  <div class="column content">
+    <h1>The City</h1>
+    <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+    <p>You will learn more about web layout and responsive web pages in a later chapter.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Footer Text</p>
+</div>
+
+</div>
+
+
+<div  style="border:solid 2px green;" >
+
+
+
+<h1 style="text-align:center">The display Property</h1>
+
+<h2>display: inline</h2>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="a">Aliquam</span> <span class="a">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+<h2>display: inline-block</h2>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="b">Aliquam</span> <span class="b">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+<h2>display: block</h2>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="c">Aliquam</span> <span class="c">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+</div>
+
+
+<div  style="border:solid 2px green;" >
+
+<h1 style="text-align:center">Horizontal Navigation Links</h1>
+<p>By default, list items are displayed vertically. In this example we use display: inline-block to display them horizontally (side by side).</p>
+<p>Note: If you resize the browser window, the links will automatically break when it becomes too crowded.</p>
+
+<ul class="nav">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About Us</a></li>
+  <li><a href="#clients">Our Clients</a></li>
+  <li><a href="#contact">Contact Us</a></li>
+</ul>
+
+
+</div>
+
+<div style="border:solid 2px black;">
+
+<h2 style="text-align:center">Center Align Elements</h2>
+<p>To horizontally center a block element (like div), use margin: auto;</p>
+
+<div class="center">
+  <p><b>Note: </b>Using margin:auto will not work in IE8, unless a !DOCTYPE is declared.</p>
+</div>
+</div>
+
+<div style="border:solid 2px black;">
+
+<h2 style="text-align:center">Center an Image</h2>
+<p style="text-align:center">To center an image, set left and right margin to auto, and make it into a block element.</p>
+
+<img src="C:\Users\Public\Pictures\Sample Pictures\Hydrangeas.jpg" alt="Paris" style="width:40%;display: block;margin-left: auto;margin-right: auto;">
+
+</div>
+
+<div style="border:solid 2px green;height:200px;">
+
+
+<h2 style="text-align:center">Right Align</h2>
+<div class="right">
+  <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+</div>
+<p>An example of how to right align elements with the position property:</p>
+
+
+
+</div>
+
+
+
+<div style="border:solid 2px green;">
+<h2 style="text-align:center"> Descendent selector</h2>
+
+<div class="descendentselector" >
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+  <span><p>Paragraph 3 in the div.</p></span>
+</div>
+
+<p>Paragraph 4. Not in a div.</p>
+<p>Paragraph 5. Not in a div.</p>
+
+</div>
+
+<div style="border:solid 2px green;">
+<h2 style="text-align:center"> Child selector</h2>
+
+<div class="childselector" >
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+  <span><p>Paragraph 3 in the div.</p></span>
+</div>
+
+<p>Paragraph 4. Not in a div.</p>
+<p>Paragraph 5. Not in a div.</p>
+
+</div>
+
+
+<div style="border:solid 2px green;">
+<h2 style="text-align:center"> Adjacent sibling selector</h2>
+
+<div class="adjacentsiblingselector" >
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+
+</div>
+
+<p>Paragraph 4. Not in a div.</p>
+
+<p>Paragraph 5. Not in a div.</p>
+
+</div>
+
+<div style="border:solid 2px green;">
+<h2 style="text-align:center"> General sibling selector</h2>
+
+<div class="generalsiblingselector" >
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+
+</div>
+
+<p>Paragraph 4. Not in a div.</p>
+
+<code>Some code.</code>
+<p>Paragraph 5. Not in a div.</p>
+
+</div>
+
+
+<div style="border:solid 2px green;">
+<h2 style="text-align:center">Mouse over the div element below to change its background color:</h2>
+
+<div class="divhover">Mouse Over Me</div>
+</div>
+
+<div style="border:solid 2px green;height:150px;">
+
+<div class="hoveroverme">Hover over me to show the p element
+  <p>Tada! Here I am! hip hip hurraaaaaaaaaaaaaaayyyyyyyyyyyy</p>
+</div>
+
+
+</div>
+<div class="firstchild" style="border:solid 2px green;" >
+
+
+<p>This is some text.</p>
+<p>This is some text.</p>
+<p><b>Note:</b> For :first-child to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+<h2 style="text-align:center">first-child element</h2>
+
+</div>
+
+<div class="firstielement" style="border:solid 2px green;" >
+<p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+<p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+<p><b>Note:</b> For :first-child to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+<h2 style="text-align:center">first i element in all child</h2>
+</div>
+
+
+<div class="alli" style="border:solid 2px green;">
+
+<p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+<p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+<p><b>Note:</b> For :first-child to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+<h2 style="text-align:center">all i element in first child</h2>
+</div>
+
+
+<div class="lang"  style="border:solid 2px green;">
+<p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+<p>In this example, :lang defines the quotation marks for q elements with lang="no":</p>
+<p><b>Note:</b> IE8 supports the :lang pseudo class only if a !DOCTYPE is specified.</p>
+
+</div>
+
+<div class="pseudoelements"  style="border:solid 2px green;">
+<p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+
+</div>
+
+<div class="firstletter"  style="border:solid 2px green;">
+<p>You can use the ::first-letter pseudo-element to add a special effect to the first character of a text!</p>
+</div>
+
+<div class="usingselection"  style="border:solid 2px green;">
+
+<h1>Select some text on this page:</h1>
+
+<p>This is a paragraph.</p>
+<div>This is some text in a div element.</div>
+</div>
+
+
+<div class="usingopacity"  style="border:solid 2px green;">
+<h1>Image Transparency</h1>
+<p>The opacity property specifies the transparency of an element. The lower the value, the more transparent:</p>
+
+<p>Image with 50% opacity:</p>
+<img src="C:\Users\Public\Pictures\Sample Pictures\Hydrangeas.jpg" alt="Forest" width="170" height="100" >
+<img src="C:\Users\Public\Pictures\Sample Pictures\Hydrangeas.jpg" alt="Forest" width="170" height="100">
+<img src="C:\Users\Public\Pictures\Sample Pictures\Hydrangeas.jpg" alt="Forest" width="170" height="100">
+
+
+</div>
+
+<div  style="border:solid 2px green;">
+<h1>Transparent Box</h1>
+<p>When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read:</p>
+
+<div class="usingtransparency first"><p>opacity 0.1</p></div>
+<div class="usingtransparency second"><p>opacity 0.3</p></div>
+<div class="usingtransparency third"><p>opacity 0.6</p></div>
+<div><p>opacity 1 (default)</p></div>
+
+
+</div>
+
+<div class="textin" style="border:solid 2px green;" >
+
+<div class="textinbackground">
+  <div class="textintransbox">
+    <p>This is some text that is placed in the transparent box.</p>
+  </div>
+</div>
+
+
+</div>
+
+
+<div class="drop" style="border:solid 2px green;height:300px;" >
+<h2>Dropdown Menu</h2>
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div>
+</div>
+
+
+</div>
+
+
+<div style="border:solid 2px green;height:300px;">
+<h2 style="text-align:center">Image Gallery</h2>
+<div class="gallery">
+  <a target="_blank" href="Hydrangeas.jpg">
+    <img src="Hydrangeas.jpg" alt="5Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="Jellyfish.jpg">
+    <img src="Jellyfish.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="Koala.jpg">
+    <img src="Koala.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="Penguins.jpg">
+    <img src="Penguins.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+
+
+</div>
+
+<div class="counters" style="border:solid 2px green;height:500px;">
+<h1>HTML tutorials:</h1>
+<h2>HTML Tutorial</h2>
+<h2>CSS Tutorial</h2>
+
+<h1>Scripting tutorials:</h1>
+<h2>JavaScript</h2>
+<h2>VBScript</h2>
+
+<h1>XML tutorials:</h1>
+<h2>XML</h2>
+<h2>XSL</h2>
+
+
+
+
+</div>
+
+
+</body>
+</html>
